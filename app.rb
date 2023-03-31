@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
-require 'sinatra/base'
-require 'sinatra/activerecord'
+require "sinatra/base"
+require "sinatra/activerecord"
+require "erb"
 
-require_relative './config/environments' # database configuration
+require_relative "./config/environments" # database configuration
 
 # Application Entry Point
 class App < Sinatra::Base
-  get '/search' do
+  get "/search" do
   end
 end
