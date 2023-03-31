@@ -14,7 +14,6 @@ Dir["#{current_dir}/app/models/*.rb"].sort.each { |file| require_relative file }
 class App < Sinatra::Base
   get '/search' do
     @areas = Area.search(params)
-    puts @areas
     @areas.to_json
   end
 end
