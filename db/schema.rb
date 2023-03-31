@@ -12,16 +12,19 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_31_021043) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "btree_gin"
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "areas", force: :cascade do |t|
     t.string "name", null: false
     t.string "region", null: false
+    t.string "simple_search_field", null: false
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_areas_on_group_id"
-    t.index ["name", "region"], name: "index_areas_on_name_and_region", unique: true
+    t.index ["simple_search_field"], name: "index_areas_on_simple_search_field", opclass: :gin_trgm_ops, using: :gin
   end
 
   create_table "groups", force: :cascade do |t|
