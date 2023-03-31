@@ -1,4 +1,4 @@
-default:
+default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
@@ -8,12 +8,12 @@ default:
 
 development:
   <<: *default
-  database: <%= ENV['POSTGRES_DB'] %>
+  database: ecg_load_scheduler_development
 
 
 test:
   <<: *default
-  database: <%= ENV['POSTGRES_DB'] %>
+  database: ecg_load_scheduler_test
 
 production:
   <<: *default
