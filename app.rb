@@ -6,6 +6,11 @@ require "erb"
 
 require_relative "./config/environments" # database configuration
 
+current_dir = Dir.pwd
+
+# ./models/
+Dir["#{current_dir}/app/models/*.rb"].sort.each { |file| require_relative file }
+
 # Application Entry Point
 class App < Sinatra::Base
   configure do
