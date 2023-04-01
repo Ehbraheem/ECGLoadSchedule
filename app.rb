@@ -21,6 +21,8 @@ class App < Sinatra::Base
     erb :index
   end
   get "/search" do
+    @areas = Area.search(params)
+    @areas.to_json
     erb :schedules
   end
 end
