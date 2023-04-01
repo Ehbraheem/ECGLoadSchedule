@@ -17,7 +17,10 @@ class App < Sinatra::Base
     set :public_folder, "public"
     set :views, "app/views"
   end
-  get "/search" do
+  get "/" do
     erb :index
+  end
+  get "/search" do
+    erb :schedules
   end
 end
