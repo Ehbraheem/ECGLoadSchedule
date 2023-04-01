@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="ECG, Load Schedule, Ghana">
+  <meta name="description" content="Find the electricity load timetable of your area">
+  <title>
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module">
+    import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+  </script>
+</head>
+
+<body class="bg-blue-900">
+  <main>
+    <nav class="flex justify-between items-center py-4 md:py-8 px-6 md:px-12">
+      <div class="flex items-center">
+        <a href="#">
+          <img class="" src="/images/ecg_logo.png" alt="Logo">
+        </a>
+      </div>
+      <a href="https://bit.ly/ECG_LoadMgt_Schedule" class="text-yellow-300 underline py-2 px-4
+        md:text-lg hover:text-yellow-500 focus:outline-none">Official Announcement
+      </a>
+    </nav>
+    <section class="flex flex-col justify-center items-center py-12 md:py-24 px-6 md:px-0">
+      <div class="w-full md:w-3/4 flex flex-col md:flex-row justify-center md:justify-between items-center">
+        <div class="text-center md:text-left md:w-1/2">
+          <div>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">Find the load schedule of your area</h1>
+            <p class="text-lg md:text-xl text-white mb-8">Maintenance works being carried out by GNGC & ECG,
+              there is a power generation shortfall. In this regard, please find below a load management schedule</p>
+          </div>
+          <div>
+            <p class="text-white text-sm md:text-base mt-3 md:mt-0">Designed & developed by <a
+                href="https://github.com/Ehbraheem" class="text-yellow-300 underline hover:text-yellow-500">
+                Bolatan</a> and <a href="https://www.derrickamenuve.com/"
+                class="text-yellow-300 underline hover:text-yellow-500">
+                Derrick</a>
+            <p class="text-white text-sm md:text-base mt-3 mb-4 md:mt-0">Find design on <a
+                href="https://www.figma.com/file/IxZ6JzQzB2HDmG7HZk8L09/ECG-Load-schedule-web-app?node-id=29%3A5&t=CQlwNHdWpPX2dpUY-1"
+                class="text-yellow-300 underline hover:text-yellow-500">
+                Figma</a> and code on <a href="https://github.com/Ehbraheem/ECGLoadSchedule"
+                class="text-yellow-300 underline hover:text-yellow-500">
+                Github</a>
+
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center md:items-end">
+          <div class="bg-white shadow-lg rounded-lg p-16 mb-6 md:mb-0 md:ml-auto md:w-4/5">
+            <turbo-frame id="schedules">
+            <p class="text-blue-800 text-lg font-bold md:text-base mb-2">Find Schedule</p>
+              <form action="/search" method="get">
+                <label for="name" class="mt-10">Area name</label>
+                <input type="text" class="border border-gray-400 mt-2 py-2 px-4 rounded-lg w-full md:mb-2"
+                  placeholder="e.g Teshie Nungua Estates">
+                <button type="submit" class="py-3 px-4 mt-10 w-full font-bold text-white transition duration-300 bg-blue-800
+                    rounded-full hover:bg-blue-900 focus:outline-none">
+                  Find Schedule
+                </button>
+              </form>
+            </turbo-frame>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+
+</html>
