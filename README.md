@@ -1,4 +1,4 @@
 # ECGLoadSchedule
 
 ## Running
-run `rackup` in the project directory.
+run `rackup` or `rackup config.ru` in the project directory.
