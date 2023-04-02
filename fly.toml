@@ -1,0 +1,31 @@
+# fly.toml file generated for ecg on 2023-04-01T23:56:03+01:00
+
+app = "ecg"
+kill_signal = "SIGINT"
+kill_timeout = 100
+primary_region = "lhr"
+
+[build]
+  [build.args]
+    RUBY_VERSION = "3.2.2"
+
+[deploy]
+  release_command = "rake db:create db:migrate"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20

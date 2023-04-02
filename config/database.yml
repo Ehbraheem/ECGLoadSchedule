@@ -17,4 +17,5 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['POSTGRES_DB'] %>
+  database: ecg_load_scheduler
+  URL: <%= ENV['DATABASE_URL'] %>

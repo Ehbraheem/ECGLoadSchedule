@@ -2,6 +2,15 @@
   <div>
     <p>
       Your schedule:
+      <% @areas.each do |area| %>
+        <p>
+          <strong><%= area.name %></strong>
+          <br>
+          <span><%= area.schedules.first.day %></span>
+          <br>
+          <span><%= area.schedules.first.time %></span>
+        </p>
+      <% end %>
     </p>
 
 
