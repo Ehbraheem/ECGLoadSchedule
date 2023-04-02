@@ -17,7 +17,10 @@ GEM
     minitest (5.18.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.8)
     pg (1.4.6)
+    puma (6.2.1)
+      nio4r (~> 2.0)
     rack (2.2.6.4)
     rack-protection (3.0.5)
       rack
@@ -35,14 +38,16 @@ GEM
       concurrent-ruby (~> 1.0)
 
 PLATFORMS
-  arm64-darwin-21
+  ruby
   x86_64-darwin-19
+  x86_64-darwin-22
 
 DEPENDENCIES
   activerecord (~> 7.0)
   pg (~> 1.4)
+  puma (~> 6.2)
   sinatra (~> 3.0)
   sinatra-activerecord (~> 2.0)
 
 BUNDLED WITH
-   2.4.7
+   2.4.10
